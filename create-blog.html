@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Blog - Create Blog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+
+        <div class="navbar">
+
+            <h1>My Blog</h1>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="create-blog.html">Create Blog</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Create Blog -->
+    <main class="form-container">
+
+        <div class="form-box blog-form">
+
+            <h2>Create New Blog</h2>
+
+
+            <form id="blogForm">
+
+                <label for="blogTitle">
+                    Blog Title
+                </label>
+
+                <input
+                    type="text"
+                    id="blogTitle"
+                    placeholder="Enter blog title"
+                    required
+                >
+
+
+                <label for="blogAuthor">
+                    Author
+                </label>
+
+                <input
+                    type="text"
+                    id="blogAuthor"
+                    placeholder="Enter author name"
+                    required
+                >
+
+
+                <label for="blogContent">
+                    Blog Content
+                </label>
+
+                <textarea
+                    id="blogContent"
+                    rows="10"
+                    placeholder="Write your blog here..."
+                    required
+                ></textarea>
+
+
+                <button type="submit" class="btn">
+                    Publish Blog
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="struct.js"></script>
+
+</body>
+
+</html>
