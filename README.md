@@ -46,21 +46,21 @@ blog/
 └── README.md
 ```
 
-▶️ How to Run
-Clone the repository.
-Open the project in Visual Studio Code.
-Open index.html using Live Server.
-The application will run in your browser.
+## ▶️ How to Run
 
+1. Clone the repository.
+2. Open the project in Visual Studio Code.
+3. Open `index.html` using Live Server.
+4. The application will run in your browser.
 
-📌 Project Status
+## 📌 Project Status
 
-Completed – Frontend Version
+**Completed – Frontend Version**
 
-👩‍💻 Author
+## 👩‍💻 Author
 
-Bhoomika M S
+**Bhoomika M S**
 
-GitHub:https://github.com/Bhoomika-132006
+GitHub: https://github.com/Bhoomika-132006
 
-LinkedIn:https://www.linkedin.com/in/bhoomika-m-s-b22617398/
+LinkedIn: https://www.linkedin.com/in/bhoomika-m-s-b22617398/
