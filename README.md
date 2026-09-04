@@ -44,7 +44,7 @@ blog/
 ├── login.html
 ├── register.html
 └── README.md
-
+```
 
 ▶️ How to Run
 Clone the repository.
