@@ -1,66 +1,96 @@
-# 📝 Responsive Blog Application
+# Full-Stack Blog Application
 
-A simple and responsive Blog Application developed using **HTML, CSS, and JavaScript**.
+A responsive and user-friendly Blog Application developed using **HTML, CSS, JavaScript, Node.js, and Express.js**.
 
-## 🚀 Project Overview
+## 🚀 Features
 
-The Responsive Blog Application is a frontend web project designed to provide a clean and user-friendly blogging interface.
-
-Users can register, log in, create blog posts, view blogs, and delete blog posts.
-
-## ✨ Features
-
-- 🏠 Responsive Home Page
-- 🔐 User Login
-- 📝 User Registration
-- 📊 User Dashboard
-- ✍️ Create Blog Posts
-- 🗑️ Delete Blog Posts
-- 💾 LocalStorage Data Management
-- 📱 Responsive Design
-- 🎨 Clean User Interface
+- User Registration
+- User Login
+- Create and Publish Blogs
+- Display Blogs
+- Delete Blogs
+- REST API Integration
+- Backend Data Storage
+- Responsive Design
+- Git & GitHub
 
 ## 🛠️ Technologies Used
 
-- HTML
-- CSS
+### Frontend
+- HTML5
+- CSS3
 - JavaScript
-- LocalStorage
-- Git
-- GitHub
+- Fetch API
+
+### Backend
+- Node.js
+- Express.js
+- CORS
+- REST APIs
+
+### Data Storage
+- JSON files
+
+## 🔗 REST APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Check server status |
+| GET | `/api/test` | Test API |
+| POST | `/api/register` | Register user |
+| POST | `/api/login` | Login user |
+| POST | `/api/blogs` | Create blog |
+| GET | `/api/blogs` | Get all blogs |
+| DELETE | `/api/blogs/:id` | Delete blog |
 
 ## 📂 Project Structure
 
 ```text
 blog/
-├── .dist/
-├── css/
-│   └── style.css
-├── js/
-│   └── structure.js
-├── create-blog.html
-├── dashboard.html
-├── index.html
-├── login.html
-├── register.html
+├── backend/
+│   ├── node_modules/
+│   ├── blogs.json
+│   ├── users.json
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── frontend/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── structure.js
+│   ├── create-blog.html
+│   ├── dashboard.html
+│   ├── index.html
+│   ├── login.html
+│   └── register.html
+│
 └── README.md
 ```
 
-## ▶️ How to Run
+▶️ How to Run
+1. Start the Backend
 
-1. Clone the repository.
-2. Open the project in Visual Studio Code.
-3. Open `index.html` using Live Server.
-4. The application will run in your browser.
+Open the terminal inside the backend folder: `node server.js`
+The server will run at:http://localhost:3000
 
-## 📌 Project Status
+2. Start the Frontend
 
-**Completed – Frontend Version**
+Open the frontend folder using Live Server.
+Open:index.html
 
-## 👩‍💻 Author
+3. Use the Application
+Register a new account.
+Login using your credentials.
+Create a blog.
+View blogs on the Home page and Dashboard.
+Delete blogs from the Dashboard.
 
-**Bhoomika M S**
+📌 Project Status
 
-GitHub: https://github.com/Bhoomika-132006
+Completed – Full-Stack Version
 
-LinkedIn: https://www.linkedin.com/in/bhoomika-m-s-b22617398/
+👩‍💻 Author
+
+Bhoomika M S

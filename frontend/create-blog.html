@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Blog - Create Blog</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>My Blog</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="create-blog.html">Create Blog</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="create-blog-section">
+
+            <h2>Create a New Blog</h2>
+
+            <p>Write and publish your blog post.</p>
+
+            <form id="blogForm">
+
+                <div>
+                    <label for="blogTitle">Blog Title</label>
+
+                    <input
+                        type="text"
+                        id="blogTitle"
+                        placeholder="Enter blog title"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="blogAuthor">Author</label>
+
+                    <input
+                        type="text"
+                        id="blogAuthor"
+                        placeholder="Enter author name"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="blogContent">Blog Content</label>
+
+                    <textarea
+                        id="blogContent"
+                        placeholder="Write your blog content"
+                        rows="8"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit">
+                    Publish Blog
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/structure.js"></script>
+
+</body>
+
+</html>

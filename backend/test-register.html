@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Registration API</title>
+</head>
+<body>
+
+    <h2>Test Registration</h2>
+
+    <button onclick="registerUser()">Register User</button>
+
+    <script>
+        async function registerUser() {
+
+            const user = {
+                name: "Bhoomika",
+                email: "bhoomika@example.com",
+                password: "123456"
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/api/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(user)
+                });
+
+                const data = await response.json();
+
+                console.log(data);
+                alert(data.message);
+
+            } catch (error) {
+                console.error(error);
+                alert("Unable to connect to server");
+            }
+        }
+    </script>
+
+</body>
+</html>
