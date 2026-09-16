@@ -2,68 +2,143 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>My Blog - Create Blog</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
 <body>
 
-    <header>
-        <h1>My Blog</h1>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="create-blog.html">Create Blog</a>
-        </nav>
+    <header>
+
+        <div class="navbar">
+
+            <h1>
+                My Blog
+            </h1>
+
+            <nav>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+
+                <a href="/create-blog">
+                    Create Blog
+                </a>
+
+                <a href="/login">
+                    Login
+                </a>
+
+            </nav>
+
+        </div>
+
     </header>
+
+
+    <!-- =========================
+         CREATE BLOG
+    ========================== -->
 
     <main>
 
         <section class="create-blog-section">
 
-            <h2>Create a New Blog</h2>
+            <h2>
+                Create a New Blog
+            </h2>
 
-            <p>Write and publish your blog post.</p>
+            <p>
+                Write and publish your blog post.
+            </p>
 
-            <form id="blogForm">
+
+            <form
+                id="blogForm"
+                action="/create-blog"
+                method="POST"
+            >
+
+                <!-- Blog Title -->
 
                 <div>
-                    <label for="blogTitle">Blog Title</label>
+
+                    <label for="blogTitle">
+                        Blog Title
+                    </label>
 
                     <input
                         type="text"
                         id="blogTitle"
+                        name="title"
                         placeholder="Enter blog title"
                         required
                     >
+
                 </div>
 
+
+                <!-- Author -->
+
                 <div>
-                    <label for="blogAuthor">Author</label>
+
+                    <label for="blogAuthor">
+                        Author
+                    </label>
 
                     <input
                         type="text"
                         id="blogAuthor"
+                        name="author"
                         placeholder="Enter author name"
                         required
                     >
+
                 </div>
 
+
+                <!-- Blog Content -->
+
                 <div>
-                    <label for="blogContent">Blog Content</label>
+
+                    <label for="blogContent">
+                        Blog Content
+                    </label>
 
                     <textarea
                         id="blogContent"
+                        name="content"
                         placeholder="Write your blog content"
                         rows="8"
                         required
                     ></textarea>
+
                 </div>
+
+
+                <!-- Submit -->
 
                 <button type="submit">
                     Publish Blog
@@ -75,11 +150,19 @@
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 My Blog. All Rights Reserved.</p>
-    </footer>
 
-    <script src="js/structure.js"></script>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 My Blog.
+            All Rights Reserved.
+        </p>
+
+    </footer>
 
 </body>
 

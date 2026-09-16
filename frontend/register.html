@@ -2,39 +2,92 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>My Blog - Register</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
 <body>
 
-    <header>
-        <h1>My Blog</h1>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="dashboard.html">Dashboard</a>
-        </nav>
+    <header>
+
+        <div class="navbar">
+
+            <h1>
+                My Blog
+            </h1>
+
+            <nav>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/login">
+                    Login
+                </a>
+
+                <a href="/register">
+                    Register
+                </a>
+
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+
+            </nav>
+
+        </div>
+
     </header>
+
+
+    <!-- =========================
+         REGISTER SECTION
+    ========================== -->
 
     <main>
 
         <section class="register-section">
 
-            <h2>Create an Account</h2>
+            <h2>
+                Create an Account
+            </h2>
 
-            <p>Register to create and share your blogs.</p>
+            <p>
+                Register to create and share your blogs.
+            </p>
 
-            <form id="registerForm">
+
+            <form
+                id="registerForm"
+                action="/register"
+                method="POST"
+            >
+
+                <!-- Name -->
 
                 <div>
-                    <label for="registerName">Name</label>
+
+                    <label for="registerName">
+                        Name
+                    </label>
 
                     <input
                         type="text"
@@ -43,10 +96,17 @@
                         placeholder="Enter your name"
                         required
                     >
+
                 </div>
 
+
+                <!-- Email -->
+
                 <div>
-                    <label for="registerEmail">Email</label>
+
+                    <label for="registerEmail">
+                        Email
+                    </label>
 
                     <input
                         type="email"
@@ -55,10 +115,17 @@
                         placeholder="Enter your email"
                         required
                     >
+
                 </div>
 
+
+                <!-- Password -->
+
                 <div>
-                    <label for="registerPassword">Password</label>
+
+                    <label for="registerPassword">
+                        Password
+                    </label>
 
                     <input
                         type="password"
@@ -67,7 +134,11 @@
                         placeholder="Enter your password"
                         required
                     >
+
                 </div>
+
+
+                <!-- Submit -->
 
                 <button type="submit">
                     Register
@@ -75,20 +146,34 @@
 
             </form>
 
+
             <p>
+
                 Already have an account?
-                <a href="login.html">Login here</a>
+
+                <a href="/login">
+                    Login here
+                </a>
+
             </p>
 
         </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 My Blog. All Rights Reserved.</p>
-    </footer>
 
-    <script src="js/structure.js"></script>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 My Blog.
+            All Rights Reserved.
+        </p>
+
+    </footer>
 
 </body>
 

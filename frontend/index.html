@@ -2,62 +2,147 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>My Blog - Home</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header>
+
         <div class="navbar">
 
-            <h1>My Blog</h1>
+            <h1>
+                My Blog
+            </h1>
 
             <nav>
-                <a href="index.html">Home</a>
-                <a href="login.html">Login</a>
-                <a href="register.html">Register</a>
-                <a href="dashboard.html">Dashboard</a>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/login">
+                    Login
+                </a>
+
+                <a href="/register">
+                    Register
+                </a>
+
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+
+                <a href="/create-blog">
+                    Create Blog
+                </a>
+
             </nav>
 
         </div>
+
     </header>
 
 
-    <!-- Main Content -->
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
     <main class="container">
 
-        <section class="hero">
-            <h2>Welcome to My Blog</h2>
-            <p>Read, write and share your thoughts with the world.</p>
 
-            <a href="create-blog.html" class="btn">
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+
+            <h2>
+                Welcome to My Blog
+            </h2>
+
+            <p>
+                Read, write and share your
+                thoughts with the world.
+            </p>
+
+            <a
+                href="/create-blog"
+                class="btn"
+            >
                 Create Blog
             </a>
+
         </section>
 
 
-        <h2 class="section-title">Latest Blogs</h2>
+        <!-- =========================
+             LATEST BLOGS
+        ========================== -->
 
-        <div id="blogList" class="blog-container">
+        <h2 class="section-title">
+            Latest Blogs
+        </h2>
 
-            <!-- Blogs will be displayed here using JavaScript -->
+
+        <div
+            id="blogList"
+            class="blog-container"
+        >
+
+            <div class="blog-card">
+
+                <h3>
+                    Explore Our Blogs
+                </h3>
+
+                <p>
+                    View the latest blog posts
+                    from our blog collection.
+                </p>
+
+                <a
+                    href="/dashboard"
+                    class="btn"
+                >
+                    View All Blogs
+                </a>
+
+            </div>
 
         </div>
 
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
-        <p>&copy; 2026 My Blog. All Rights Reserved.</p>
+
+        <p>
+            &copy; 2026 My Blog.
+            All Rights Reserved.
+        </p>
+
     </footer>
-
-
-    <script src="js/structure.js"></script>
 
 </body>
 

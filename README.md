@@ -1,18 +1,23 @@
 # Full-Stack Blog Application
 
-A responsive and user-friendly Blog Application developed using **HTML, CSS, JavaScript, Node.js, and Express.js**.
+A responsive and user-friendly full-stack Blog Application developed using **HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB Atlas**.
+
+The application allows users to register, log in, create and publish blogs, view blogs, read individual blog posts, and delete blogs through a Node.js and Express.js backend connected to MongoDB Atlas.
 
 ## 🚀 Features
 
 - User Registration
 - User Login
 - Create and Publish Blogs
-- Display Blogs
+- Display Latest Blogs on Home Page
+- View All Blogs on Dashboard
+- Read Individual Blog Posts
 - Delete Blogs
-- REST API Integration
-- Backend Data Storage
+- MongoDB Atlas Database Integration
+- Server-Side Form Handling
+- Express.js Backend
 - Responsive Design
-- Git & GitHub
+- Git & GitHub Version Control
 
 ## 🛠️ Technologies Used
 
@@ -20,37 +25,93 @@ A responsive and user-friendly Blog Application developed using **HTML, CSS, Jav
 - HTML5
 - CSS3
 - JavaScript
-- Fetch API
 
 ### Backend
 - Node.js
 - Express.js
 - CORS
-- REST APIs
+- dotenv
 
-### Data Storage
-- JSON files
+### Database
+- MongoDB Atlas
+- MongoDB Node.js Driver
 
-## 🔗 REST APIs
+### Development Tools
+- Visual Studio Code
+- Git
+- GitHub
+- MongoDB Atlas
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/` | Check server status |
-| GET | `/api/test` | Test API |
-| POST | `/api/register` | Register user |
-| POST | `/api/login` | Login user |
-| POST | `/api/blogs` | Create blog |
-| GET | `/api/blogs` | Get all blogs |
-| DELETE | `/api/blogs/:id` | Delete blog |
-
-## 📂 Project Structure
+## 🗄️ Database Structure
 
 ```text
+blogDatabase
+├── users
+└── blogs
+```
+
+🏠 Home Page
+
+The Home page displays the latest 3 blogs stored in MongoDB Atlas.
+
+Users can:
+
+View blog titles
+View authors
+Preview blog content
+Read complete blog posts
+Navigate to the Dashboard
+Create a new blog
+📊 Dashboard
+
+The Dashboard displays all blogs stored in MongoDB Atlas.
+
+Each blog provides:
+
+Blog title
+Author
+Content
+Read More option
+Delete option
+
+Blogs are displayed with the newest blogs first.
+
+✍️ Create Blog
+
+Users can create a blog by entering:
+
+Blog Title
+Author Name
+Blog Content
+
+The information is submitted through an HTML form and stored in the MongoDB Atlas blogs collection.
+
+🔐 User Registration and Login
+Registration
+
+Users can create an account using:
+
+Name
+Email
+Password
+
+The information is stored in the MongoDB Atlas users collection.
+
+Login
+
+Registered users can log in using:
+
+Email
+Password
+
+The server checks the submitted credentials against the users collection.
+
+📂 Project Structure
 blog/
+│
 ├── backend/
 │   ├── node_modules/
-│   ├── blogs.json
-│   ├── users.json
+│   ├── .env
 │   ├── package.json
 │   ├── package-lock.json
 │   └── server.js
@@ -66,30 +127,21 @@ blog/
 │   ├── login.html
 │   └── register.html
 │
+├── .gitignore
+│
 └── README.md
-```
+🔒 Environment Variables
 
-▶️ How to Run
-1. Start the Backend
+MongoDB connection details are stored securely in the .env file.
 
-Open the terminal inside the backend folder: `node server.js`
-The server will run at:http://localhost:3000
+MONGODB_URI=your_mongodb_connection_string
 
-2. Start the Frontend
+The .env file should not be uploaded to GitHub.
 
-Open the frontend folder using Live Server.
-Open:index.html
-
-3. Use the Application
-Register a new account.
-Login using your credentials.
-Create a blog.
-View blogs on the Home page and Dashboard.
-Delete blogs from the Dashboard.
 
 📌 Project Status
 
-Completed – Full-Stack Version
+Completed – Full-Stack Blog Application
 
 👩‍💻 Author
 

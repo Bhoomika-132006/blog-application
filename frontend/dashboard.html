@@ -2,17 +2,29 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>My Blog - Dashboard</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header>
 
         <div class="navbar">
@@ -20,10 +32,23 @@
             <h1>My Blog</h1>
 
             <nav>
-                <a href="index.html">Home</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="create-blog.html">Create Blog</a>
-                <a href="#" id="logoutBtn">Logout</a>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+
+                <a href="/create-blog">
+                    Create Blog
+                </a>
+
+                <a href="/login">
+                    Login
+                </a>
+
             </nav>
 
         </div>
@@ -31,41 +56,70 @@
     </header>
 
 
-    <!-- Dashboard -->
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
     <main class="container">
 
         <div class="dashboard-header">
 
             <div>
-                <h2>Dashboard</h2>
+
+                <h2>
+                    Dashboard
+                </h2>
 
                 <p id="welcomeUser">
-                    Welcome!
+                    Welcome to your blog dashboard!
                 </p>
+
             </div>
 
-            <a href="create-blog.html" class="btn">
+
+            <a
+                href="/create-blog"
+                class="btn"
+            >
                 + Create Blog
             </a>
 
         </div>
 
 
+        <!-- =========================
+             BLOG SECTION
+        ========================== -->
+
         <h2 class="section-title">
-            My Blogs
+            All Blogs
         </h2>
 
 
-        <div id="dashboardBlogs" class="blog-container">
+        <div
+            id="dashboardBlogs"
+            class="blog-container"
+        >
 
-            <!-- User blogs will appear here -->
+            <!-- BLOGS WILL BE INSERTED BY NODE.JS -->
 
         </div>
 
     </main>
 
 
-    <script src="js/structure.js"></script>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 My Blog.
+            All Rights Reserved.
+        </p>
+
+    </footer>
 
 </body>
 

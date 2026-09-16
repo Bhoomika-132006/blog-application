@@ -2,42 +2,92 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>My Blog - Login</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>My Blog</h1>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="dashboard.html">Dashboard</a>
-        </nav>
+    <header>
+
+        <div class="navbar">
+
+            <h1>
+                My Blog
+            </h1>
+
+            <nav>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/login">
+                    Login
+                </a>
+
+                <a href="/register">
+                    Register
+                </a>
+
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+
+            </nav>
+
+        </div>
+
     </header>
 
 
-    <!-- Login Section -->
+    <!-- =========================
+         LOGIN SECTION
+    ========================== -->
+
     <main>
 
         <section class="login-section">
 
-            <h2>Login</h2>
+            <h2>
+                Login
+            </h2>
 
-            <p>Login to access your blog dashboard.</p>
+            <p>
+                Login to access your blog dashboard.
+            </p>
 
-            <form id="loginForm">
+
+            <form
+                id="loginForm"
+                action="/login"
+                method="POST"
+            >
+
+                <!-- Email -->
 
                 <div>
-                    <label for="loginEmail">Email</label>
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
 
                     <input
                         type="email"
@@ -46,11 +96,17 @@
                         placeholder="Enter your email"
                         required
                     >
+
                 </div>
 
 
+                <!-- Password -->
+
                 <div>
-                    <label for="loginPassword">Password</label>
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
 
                     <input
                         type="password"
@@ -59,8 +115,11 @@
                         placeholder="Enter your password"
                         required
                     >
+
                 </div>
 
+
+                <!-- Submit -->
 
                 <button type="submit">
                     Login
@@ -70,8 +129,13 @@
 
 
             <p>
+
                 Don't have an account?
-                <a href="register.html">Register here</a>
+
+                <a href="/register">
+                    Register here
+                </a>
+
             </p>
 
         </section>
@@ -79,14 +143,18 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
-        <p>&copy; 2026 My Blog. All Rights Reserved.</p>
+
+        <p>
+            &copy; 2026 My Blog.
+            All Rights Reserved.
+        </p>
+
     </footer>
-
-
-    <!-- JavaScript -->
-    <script src="js/structure.js"></script>
 
 </body>
 
