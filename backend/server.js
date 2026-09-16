@@ -30,6 +30,8 @@ const {
     ObjectId
 } = require("mongodb");
 
+const bcrypt = require("bcrypt");
+
 
 // =========================
 // EXPRESS APP
@@ -105,9 +107,48 @@ app.use(
         path.join(
             __dirname,
             "../frontend"
-        )
+        ),
+        {
+            index: false
+        }
     )
 );
+
+
+// =========================
+// HTML ESCAPE FUNCTION
+// =========================
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
 
 
 // =========================
@@ -127,6 +168,7 @@ app.get("/", async (req, res) => {
         `);
 
     }
+
 
     try {
 
@@ -149,6 +191,7 @@ app.get("/", async (req, res) => {
                 "../frontend/index.html"
             );
 
+
         let html =
             fs.readFileSync(
                 filePath,
@@ -156,11 +199,11 @@ app.get("/", async (req, res) => {
             );
 
 
-        // Create blog HTML
+        // Blog HTML
         let blogsHTML = "";
 
 
-        // No blogs available
+        // No blogs
         if (blogs.length === 0) {
 
             blogsHTML = `
@@ -284,17 +327,20 @@ app.get("/", async (req, res) => {
 // REGISTER PAGE
 // =========================
 
-app.get("/register", (req, res) => {
+app.get(
+    "/register",
+    (req, res) => {
 
-    const filePath =
-        path.join(
-            __dirname,
-            "../frontend/register.html"
-        );
+        const filePath =
+            path.join(
+                __dirname,
+                "../frontend/register.html"
+            );
 
-    res.sendFile(filePath);
+        res.sendFile(filePath);
 
-});
+    }
+);
 
 
 // =========================
@@ -385,6 +431,14 @@ app.post(
             }
 
 
+            // Hash password
+            const hashedPassword =
+                await bcrypt.hash(
+                    password,
+                    10
+                );
+
+
             // Create user
             const newUser = {
 
@@ -392,7 +446,7 @@ app.post(
 
                 email: email,
 
-                password: password,
+                password: hashedPassword,
 
                 createdAt: new Date()
 
@@ -454,17 +508,20 @@ app.post(
 // LOGIN PAGE
 // =========================
 
-app.get("/login", (req, res) => {
+app.get(
+    "/login",
+    (req, res) => {
 
-    const filePath =
-        path.join(
-            __dirname,
-            "../frontend/login.html"
-        );
+        const filePath =
+            path.join(
+                __dirname,
+                "../frontend/login.html"
+            );
 
-    res.sendFile(filePath);
+        res.sendFile(filePath);
 
-});
+    }
+);
 
 
 // =========================
@@ -527,19 +584,44 @@ app.post(
                 db.collection("users");
 
 
-            // Find user
+            // Find user using email
             const user =
                 await usersCollection.findOne({
-
-                    email: email,
-
-                    password: password
-
+                    email: email
                 });
 
 
             // User not found
             if (!user) {
+
+                return res.send(`
+                    <h2>
+                        Login Failed
+                    </h2>
+
+                    <p>
+                        Invalid email or password.
+                    </p>
+
+                    <a href="/login">
+                        Try Again
+                    </a>
+                `);
+
+            }
+
+
+            // Compare entered password
+            // with hashed password
+            const passwordMatch =
+                await bcrypt.compare(
+                    password,
+                    user.password
+                );
+
+
+            // Password does not match
+            if (!passwordMatch) {
 
                 return res.send(`
                     <h2>
@@ -1245,42 +1327,6 @@ app.post(
 
     }
 );
-
-
-// =========================
-// HTML ESCAPE FUNCTION
-// =========================
-
-function escapeHTML(value) {
-
-    return String(value)
-
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
 
 
 // =========================
