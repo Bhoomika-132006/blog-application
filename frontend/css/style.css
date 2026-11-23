@@ -725,3 +725,41 @@ footer p {
         padding: 18px;
     }
 }
+
+/* =========================
+   MESSAGE / STATUS BOX
+========================= */
+
+.message-section {
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 35px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.message-section h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.message-section.success h2 {
+    color: #28a745;
+}
+
+.message-section.error h2 {
+    color: #dc3545;
+}
+
+.message-section p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.user-badge {
+    color: #4da6ff;
+    font-weight: bold;
+}

@@ -1,116 +1,78 @@
 # Full-Stack Blog Application
 
-A responsive and user-friendly full-stack Blog Application developed using **HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB Atlas**.
+A responsive and user-friendly full-stack Blog Application developed using **HTML, CSS, JavaScript, Node.js, Express.js, and PostgreSQL**.
 
-The application allows users to register, log in, create and publish blogs, view blogs, read individual blog posts, and delete blogs through a Node.js and Express.js backend connected to MongoDB Atlas.
+The application allows users to register, log in with secure password hashing and session tracking, create and publish blogs, view blogs, read individual blog posts, edit posts, and delete blogs through an Express.js backend connected to a local **PostgreSQL** database.
 
 ## 🚀 Features
 
-- User Registration
-- User Login
-- Create and Publish Blogs
-- Display Latest Blogs on Home Page
-- View All Blogs on Dashboard
-- Read Individual Blog Posts
-- Delete Blogs
-- MongoDB Atlas Database Integration
-- Server-Side Form Handling
-- Express.js Backend
-- Responsive Design
-- Git & GitHub Version Control
+- **User Authentication**: User registration and login with `bcrypt` password hashing and `express-session` cookies.
+- **Dynamic Navigation**: Navigation bar automatically adapts to show logged-in user's name and Logout link.
+- **Personalized Dashboard**: Greets logged-in users and allows full CRUD management of blogs.
+- **Create & Publish Blogs**: Create blog posts with automatic author attribution for logged-in users.
+- **Home Page Previews**: Displays the latest 3 blogs with clean excerpts and direct read-more navigation.
+- **Read Blog Posts**: Dedicated blog details page with author, published date, updated date, and full content.
+- **Edit Blogs**: Update blog post titles, authors, and content seamlessly with automatic `updated_at` timestamps.
+- **Delete Blogs with Confirmation**: Safe deletion prompts before removing posts.
+- **PostgreSQL Database Integration**: Persistent storage using the `pg` client connected to local PostgreSQL (`blog_db`).
+- **Responsive Design**: Clean, modern CSS styling fully responsive across mobile, tablet, and desktop screens.
 
 ## 🛠️ Technologies Used
 
 ### Frontend
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript (`structure.js`)
 
 ### Backend
 - Node.js
 - Express.js
-- CORS
-- dotenv
+- PostgreSQL Client (`pg`)
+- `express-session` (Session management)
+- `bcrypt` (Secure password hashing)
+- `cors`
+- `dotenv`
 
 ### Database
-- MongoDB Atlas
-- MongoDB Node.js Driver
+- PostgreSQL (Local instance, port 5432)
 
-### Development Tools
-- Visual Studio Code
-- Git
-- GitHub
-- MongoDB Atlas
+---
 
 ## 🗄️ Database Structure
 
-```text
-blogDatabase
-├── users
-└── blogs
+**Database Name:** `blog_db`
+
+### `users` Table
+```sql
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 ```
 
-🏠 Home Page
+### `blogs` Table
+```sql
+CREATE TABLE blogs (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+```
 
-The Home page displays the latest 3 blogs stored in MongoDB Atlas.
+---
 
-Users can:
+## 📂 Project Structure
 
-View blog titles
-View authors
-Preview blog content
-Read complete blog posts
-Navigate to the Dashboard
-Create a new blog
-📊 Dashboard
-
-The Dashboard displays all blogs stored in MongoDB Atlas.
-
-Each blog provides:
-
-Blog title
-Author
-Content
-Read More option
-Delete option
-
-Blogs are displayed with the newest blogs first.
-
-✍️ Create Blog
-
-Users can create a blog by entering:
-
-Blog Title
-Author Name
-Blog Content
-
-The information is submitted through an HTML form and stored in the MongoDB Atlas blogs collection.
-
-🔐 User Registration and Login
-Registration
-
-Users can create an account using:
-
-Name
-Email
-Password
-
-The information is stored in the MongoDB Atlas users collection.
-
-Login
-
-Registered users can log in using:
-
-Email
-Password
-
-The server checks the submitted credentials against the users collection.
-
-📂 Project Structure
+```text
 blog/
 │
 ├── backend/
-│   ├── node_modules/
 │   ├── .env
 │   ├── package.json
 │   ├── package-lock.json
@@ -128,21 +90,57 @@ blog/
 │   └── register.html
 │
 ├── .gitignore
-│
 └── README.md
-🔒 Environment Variables
+```
 
-MongoDB connection details are stored securely in the .env file.
+---
 
-MONGODB_URI=your_mongodb_connection_string
+## 🔒 Environment Variables
 
-The .env file should not be uploaded to GitHub.
+Configuration details are stored securely in `backend/.env`:
 
+```env
+# Server Port
+PORT=3000
 
-📌 Project Status
+# PostgreSQL Configuration
+PG_HOST=127.0.0.1
+PG_PORT=5432
+PG_DATABASE=blog_db
+PG_USER=postgres
+PG_PASSWORD=your_postgres_password
 
-Completed – Full-Stack Blog Application
+# Session Secret
+SESSION_SECRET=your_secret_key
+```
 
-👩‍💻 Author
+> **Note:** Never commit `.env` containing sensitive credentials to public GitHub repositories.
 
-Bhoomika M S
+---
+
+## 🚦 How to Run the Application
+
+1. **Install Dependencies**:
+   ```bash
+   cd backend
+   npm install
+   ```
+
+2. **Set up PostgreSQL**:
+   Ensure PostgreSQL is running on port 5432 with the database `blog_db` and tables created as shown above.
+
+3. **Start the Server**:
+   ```bash
+   npm start
+   ```
+
+4. **Access the App**:
+   Open [http://localhost:3000](http://localhost:3000) in your web browser.
+
+---
+
+## 📌 Project Status
+
+Completed – Full-Stack Blog Application with PostgreSQL & Session Authentication.
+
+👩‍💻 **Author:** Bhoomika M S
